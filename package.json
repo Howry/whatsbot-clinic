@@ -8,9 +8,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "Bot simples desenvolvido em **Node.js** usando a biblioteca [`whatsapp-web.js`](https://github.com/pedroslopez/whatsapp-web.js).  \r Ele envia **respostas automáticas** no WhatsApp informando que a clínica **não realiza atendimentos aos sábados apartir das 12hrs e domingos**.",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.34.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Howry/whatsbot-clinic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Howry/whatsbot-clinic/issues"
+  },
+  "homepage": "https://github.com/Howry/whatsbot-clinic#readme"
 }

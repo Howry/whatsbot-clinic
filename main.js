@@ -1,8 +1,15 @@
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
+const fs = require("fs");
+
+
+fs.rmSync(".wwebjs_auth", { recursive: true, force: true });
 
 const client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth({
+    clientId: "Default",
+    restartOnAuthFail: true
+  })
 });
 
 client.on("qr", qr => {
@@ -30,7 +37,11 @@ client.on("message", async msg => {
 
   // Resposta automática aos sábados após as 12h e domingos
   if ((day === 6 && hour >= 12) || day === 0) {
-    msg.reply("Olá!! Tudo bem? \nAqui é da Clínica Sorrir Odontologia Piumhi!! 😊 \nNão estamos em atendimento no momento!! Assim que retornarmos os atendimentos, retornaremos o contato!! Obrigada!! 😊");
+    msg.reply(
+            "Olá!! Tudo bem? 😊\n" +
+            "Aqui é da Clínica Sorrir Odontologia Piumhi!!\n" +
+            "Não estamos em atendimento no momento!! Assim que retornarmos, entraremos em contato!! Obrigada!! 😊"
+        );
   }
 });
 
